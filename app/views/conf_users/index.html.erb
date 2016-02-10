@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<br><br>
+<%= link_to 'Page Landing', welcome_index_path %>
+<div class="container">
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Logo</th> 
+      <th>Slogan</th>
+      <th>Name</th>
+      <th>color_principal</th>
+      <th>Banner Medio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conf_users.each do |conf_user| %>
+      <tr>
+        <td><%= image_tag conf_user.logo, class:'img-responsive imagen img-thumbnail' %></td>
+        <td><%= conf_user.slogan %></td>
+        <td><%= conf_user.name %></td>
+        <td><%= conf_user.color_1 %></td>
+        <td><%= conf_user.color_2 %></td>
+        <td><%= link_to 'Observar', conf_user %></td>
+        <td><%= link_to 'Editar', edit_conf_user_path(conf_user) %></td>
+        <td><%= link_to 'Eliminar', conf_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if ConfUser.count == 1 %>
+
+<% else %>
+
+  <%= link_to 'New Conf user', new_conf_user_path %>
+<% end %>
+</div>

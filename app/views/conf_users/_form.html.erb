@@ -1,0 +1,55 @@
+<%= form_for(@conf_user) do |f| %>
+  <% if @conf_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conf_user.errors.count, "error") %> prohibited this conf_user from being saved:</h2>
+
+      <ul>
+      <% @conf_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+
+ <div class="container">
+ <div class="field">
+    <%= f.label :logo %><br>
+    <%= f.file_field :logo ,class:'form-control'%>
+  </div>
+
+   <div class="field">
+    <%= f.label :nombre_de_la_marca %><br>
+    <%= f.text_field :name ,class:'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :slogan_de_la_marca %><br>
+    <%= f.text_field :slogan ,class:'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :color_principal %><br>
+    <%= f.color_field :color_1 ,class:'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :titulo_baner %><br>
+    <%= f.text_field :titulobaner ,class:'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :banner_medio %><br>
+    <%= f.color_field :color_2 ,class:'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :color_de_fondo %><br>
+    <%= f.color_field :fondo ,class:'form-control'%>
+  </div>  
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description ,class:'form-control'%>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Crear Marca", class:'btn btn-default btn-lg btn-block'%>
+  </div>
+<% end %>
+
+</div>

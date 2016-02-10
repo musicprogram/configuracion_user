@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Logo:</strong>
+  <%= image_tag @conf_user.logo, class:'img-responsive imagen img-thumbnail' %>
+</p>
+
+<p>
+  <strong>Slogan:</strong>
+  <%= @conf_user.slogan %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @conf_user.name %>
+</p>
+
+<p>
+  <strong>Color 1:</strong>
+  <%= @conf_user.color_1 %>
+</p>
+
+<p>
+  <strong>Color 2:</strong>
+  <%= @conf_user.color_2 %>
+</p>
+<p>
+  <strong>Fondo:</strong>
+  <%= @conf_user.fondo %>
+</p>
+<p>
+  <strong>Descripción:</strong>
+  <%= @conf_user.description %>
+</p>
+
+<%= link_to 'Edit', edit_conf_user_path(@conf_user) %> |
+<%= link_to 'Back', conf_users_path %>
+
+<div class="imagen" style="background-color:<%= @conf_user.color_1 %>;"></div>  <br>
+<div class="imagen" style="background-color:<%= @conf_user.color_2 %>;"></div> <br>
+<div class="imagen" style="background-color:<%= @conf_user.fondo %>;"></div> 
